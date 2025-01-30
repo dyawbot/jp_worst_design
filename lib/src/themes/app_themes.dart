@@ -4,45 +4,43 @@ import 'colors.dart';
 
 class JPTheme {
   static ThemeData lightTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.surface,
-    textTheme: JPStyles.textTheme,
-    buttonTheme: const ButtonThemeData(buttonColor: AppColors.button),
-    appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.primary,
-      foregroundColor: AppColors.textOnPrimary,
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: AppColors.surface,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          borderSide: const BorderSide(color: AppColors.primary),
-        )),
-    colorScheme: const ColorScheme(
-        brightness: Brightness.light,
-        primary: AppColors.primary,
-        onPrimary: AppColors.textOnPrimary,
-        secondary: AppColors.secondary,
-        onSecondary: AppColors.textOnPrimary,
-        error: AppColors.error,
-        onError: AppColors.textOnPrimary,
-        surface: AppColors.surface,
-        onSurface: AppColors.textOnSurface),
-  );
+      scaffoldBackgroundColor: AppColors.surface,
+      textTheme: JPLightStyles.textThemeLight,
+      buttonTheme: const ButtonThemeData(buttonColor: AppColors.button),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: AppColors.primary,
+        foregroundColor: AppColors.textPrimary,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: AppColors.surface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: const BorderSide(color: AppColors.primary),
+          )),
+      colorScheme: const ColorScheme.light(
+          primary: AppColors.primary,
+          onPrimary: AppColors.textPrimary,
+          secondary: AppColors.secondary,
+          onSecondary: AppColors.textOnPrimary,
+          error: AppColors.error,
+          onError: AppColors.error,
+          surface: AppColors.surfaceDark,
+          onSurface: AppColors.surfaceDark));
 
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.surfaceDark,
-    textTheme: JPStyles.textTheme,
+    textTheme: JPDarkStyles.textThemeDark,
     buttonTheme: const ButtonThemeData(buttonColor: AppColors.buttonDark),
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.primaryDark,
       foregroundColor: AppColors.textOnPrimary,
     ),
-    colorScheme: const ColorScheme(
+    colorScheme: const ColorScheme.dark(
         brightness: Brightness.dark,
-        primary: AppColors.primaryDark,
+        primary: AppColors.blackPrimary,
         onPrimary: AppColors.textOnPrimary,
-        secondary: AppColors.secondary,
+        secondary: AppColors.blackComplementary,
         onSecondary: AppColors.textOnPrimary,
         error: AppColors.error,
         onError: AppColors.textOnPrimary,
@@ -55,7 +53,7 @@ class JPTheme {
 class JPDarkTheme {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.blackPrimary,
-    textTheme: JPStyles.textTheme,
+    textTheme: JPLightStyles.textThemeLight,
     buttonTheme: const ButtonThemeData(buttonColor: AppColors.button),
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.blackPrimary,
@@ -75,7 +73,7 @@ class JPDarkTheme {
 
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.surfaceDark,
-    textTheme: JPStyles.textTheme,
+    textTheme: JPDarkStyles.textThemeDark,
     buttonTheme: const ButtonThemeData(buttonColor: AppColors.buttonDark),
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.primaryDark,

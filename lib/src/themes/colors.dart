@@ -30,6 +30,7 @@ class AppColors {
   static const Color blackPrimary = Color(0xFF0A0B0B);
   static const Color blackLightPrimary = Color(0xFF212122);
   static const Color blackDarkPrimary = Color(0xFF0B0B0B);
+  static const Color blackComplementary = Color(0xFFF5F4F4);
 
   //BLACK NEUTRAL COLORS
   static const Color blackOnSurface = Color(0xFF1B1811);

@@ -1,6 +1,5 @@
-// ignore_for_file: dangling_library_doc_comments
+// ignore_for_file: dangling_library_doc_comments, use_super_parameters
 import 'package:flutter/material.dart';
-import 'package:jp_worst_design/jp_worst_design.dart';
 
 /// JPButton is a customizable button widget for Flutter.
 ///
@@ -38,7 +37,8 @@ class JPButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor ?? AppColors.primary,
+        backgroundColor:
+            backgroundColor ?? Theme.of(context).colorScheme.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 8.0),
         ),
@@ -46,12 +46,13 @@ class JPButton extends StatelessWidget {
       onPressed: isLoading ? null : onPressed,
       child: isLoading
           ? CircularProgressIndicator(
-              color: loaderColor ?? Colors.white,
+              color: loaderColor ?? Theme.of(context).colorScheme.secondary,
               strokeWidth: 2,
             )
           : Text(
               text,
-              style: TextStyle(color: textColor ?? Colors.white),
+              style: TextStyle(
+                  color: textColor ?? Theme.of(context).colorScheme.onPrimary),
             ),
     );
   }
