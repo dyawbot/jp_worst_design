@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Primary Colors
-  static const Color primary = Color(0xFF6200EE);
+  static const Color primary = Color(0xFF5897EE);
   static const Color primaryDark = Color(0xFF3700B3);
   static const Color primaryLight = Color(0xFFBB86FC);
 
@@ -11,8 +11,9 @@ class AppColors {
   static const Color secondaryDark = Color(0xFF018786);
 
   // Neutral Colors
-  static const Color background = Color(0xFFFFFFFF);
-  static const Color surface = Color(0xFFFFFFFF);
+  static const Color background = Color(0xFFEEEEE8);
+  static const Color widgetBackground = Color(0xFFF8F8FF);
+  static const Color surface = Color(0xFFEEEEE8);
   static const Color surfaceDark = Color(0xFF252525);
   static const Color error = Color(0xFFB00020);
 
@@ -25,8 +26,10 @@ class AppColors {
   static const Color surfaceContainer = Color(0xFFFCFCFC);
 
   // Additional Colors
-  static const Color button = primary;
+  static const Color button = Color(0xFF5897EE);
   static const Color buttonDark = primaryDark;
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
 
   //BLACK THEME color
   static const Color blackPrimary = Color(0xFF0A0B0B);

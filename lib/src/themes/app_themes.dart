@@ -18,16 +18,23 @@ class JPTheme {
             borderRadius: BorderRadius.circular(8.0),
             borderSide: const BorderSide(color: AppColors.primary),
           )),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.white, // Default button color
+          foregroundColor: AppColors.primary, // Default text/icon color
+        ),
+      ),
       colorScheme: const ColorScheme.light(
           primary: AppColors.primary,
+          primaryContainer: AppColors.widgetBackground,
           onPrimary: AppColors.textPrimary,
           secondary: AppColors.secondary,
           onSecondary: AppColors.textOnPrimary,
           error: AppColors.error,
           onError: AppColors.error,
-          surface: AppColors.surfaceDark,
-          onSurface: AppColors.surfaceDark,
-          surfaceContainer: AppColors.surfaceContainer));
+          surface: AppColors.widgetBackground,
+          onSurface: AppColors.widgetBackground,
+          surfaceContainer: AppColors.widgetBackground));
 
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.surfaceDark,

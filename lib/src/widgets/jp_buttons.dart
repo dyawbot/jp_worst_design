@@ -52,7 +52,7 @@ class JPButton extends StatelessWidget {
           : Text(
               text,
               style: TextStyle(
-                  color: textColor ?? Theme.of(context).colorScheme.onPrimary),
+                  color: textColor ?? Theme.of(context).colorScheme.onSecondary),
             ),
     );
   }
