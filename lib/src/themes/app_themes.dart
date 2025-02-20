@@ -26,7 +26,8 @@ class JPTheme {
           error: AppColors.error,
           onError: AppColors.error,
           surface: AppColors.surfaceDark,
-          onSurface: AppColors.surfaceDark));
+          onSurface: AppColors.surfaceDark,
+          surfaceContainer: AppColors.surfaceContainer));
 
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.surfaceDark,

@@ -22,6 +22,8 @@ class AppColors {
   static const Color textOnPrimary = Color(0xFFFFFFFF);
   static const Color textOnSurface = Color(0xFFFFFFFF);
 
+  static const Color surfaceContainer = Color(0xFFFCFCFC);
+
   // Additional Colors
   static const Color button = primary;
   static const Color buttonDark = primaryDark;
