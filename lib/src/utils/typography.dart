@@ -44,6 +44,7 @@ class JPLightStyles {
     headlineSmall: bodyText1,
     bodyLarge: bodyText2,
     bodyMedium: bodyText3,
+
     // labelLarge: button,
   );
 }

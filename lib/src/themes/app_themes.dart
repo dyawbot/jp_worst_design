@@ -1,15 +1,28 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+
 import 'package:jp_worst_design/src/utils/typography.dart';
 import 'colors.dart';
 
 class JPTheme {
   static ThemeData lightTheme = ThemeData(
-      scaffoldBackgroundColor: AppColors.surface,
+      // primarySwatch: MaterialColor(0xFF5897EE, swatch),
+      scaffoldBackgroundColor: AppColors.scaffoldBackground,
       textTheme: JPLightStyles.textThemeLight,
       buttonTheme: const ButtonThemeData(buttonColor: AppColors.button),
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.textPrimary,
+        backgroundColor: AppColors.darkNavyBllue,
+        foregroundColor: AppColors.textOnSurface,
+        elevation: 4.0, // For shadow if needed, you can adjust the value
+        iconTheme: IconThemeData(color: AppColors.textOnSurface),
+        actionsIconTheme: IconThemeData(color: AppColors.textOnSurface),
+        // systemOverlayStyle: SystemUiOverlayStyle(
+        //   statusBarColor: AppColors.appStatusColor,
+        //   statusBarIconBrightness: Brightness.light,
+        //   systemNavigationBarColor: AppColors.appStatusColor,
+        //   systemNavigationBarIconBrightness: Brightness.dark,
+        // ),
       ),
       inputDecorationTheme: InputDecorationTheme(
           filled: true,
@@ -18,11 +31,36 @@ class JPTheme {
             borderRadius: BorderRadius.circular(8.0),
             borderSide: const BorderSide(color: AppColors.primary),
           )),
+      textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all(Colors.blue), // Text color
+        backgroundColor:
+            MaterialStateProperty.all(Colors.transparent), // Background color
+        padding: MaterialStateProperty.all(
+            const EdgeInsets.symmetric(horizontal: 18, vertical: 8)), // Padding
+        textStyle: MaterialStateProperty.all(
+          const TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      )),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.white, // Default button color
           foregroundColor: AppColors.primary, // Default text/icon color
         ),
+      ),
+      expansionTileTheme: ExpansionTileThemeData(
+        tilePadding: const EdgeInsets.all(8),
+        textColor: AppColors.textPrimary,
+        collapsedTextColor: AppColors.textPrimary,
+        collapsedBackgroundColor: AppColors.widgetBackground,
+        collapsedIconColor: AppColors.blackLightPrimary,
+        iconColor: Colors.grey.shade700,
+        backgroundColor: AppColors.widgetBackground,
+        collapsedShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
       colorScheme: const ColorScheme.light(
           primary: AppColors.primary,

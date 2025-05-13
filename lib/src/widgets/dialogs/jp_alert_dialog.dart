@@ -13,10 +13,11 @@ class JpAlertDialog extends StatelessWidget {
 
   final bool actionCloseVisibility;
   final bool actionOkayVisibility;
-  final VoidCallback? onPressedCloseBtn;
+  final VoidCallback onPressedCloseBtn;
   final VoidCallback? onPressOkay;
   final Widget child;
   final Color actionColor;
+  final IconData? preffixIcon;
   const JpAlertDialog({
     super.key,
     required this.colorMessage,
@@ -28,8 +29,9 @@ class JpAlertDialog extends StatelessWidget {
     this.actionLabel = "Okay",
     this.actionCloseLabel = "Close",
     this.onPressOkay,
-    this.onPressedCloseBtn,
+    required this.onPressedCloseBtn,
     required this.child,
+    this.preffixIcon,
     this.actionColor = AppColors.primary,
   });
 
@@ -37,28 +39,28 @@ class JpAlertDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       alignment: Alignment.centerLeft,
-      title: Row(
+      title: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            Icons.warning_rounded,
-            color: colorMessage,
+          Row(
+            children: [
+              Icon(
+                preffixIcon ?? Icons.warning_rounded,
+                color: colorMessage,
+              ),
+              const SizedBox(
+                width: 8.0,
+              ),
+              Text(title)
+            ],
           ),
-          const SizedBox(
-            width: 8.0,
-          ),
-          Text(title)
+          const Divider(thickness: 1, color: AppColors.blackLightPrimary),
         ],
       ),
       titleTextStyle: TextStyle(fontSize: 18.0, color: colorMessage),
       titlePadding: const EdgeInsets.all(18.0),
-      content: Container(
-        // color: Colors.red,
-        // width: width * 0.3,
-        height: height,
-        width: width,
-        alignment: Alignment.centerLeft,
-        child: child,
-      ),
+      content: child,
       contentPadding:
           const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
@@ -69,22 +71,18 @@ class JpAlertDialog extends StatelessWidget {
               ? MainAxisAlignment.spaceBetween
               : MainAxisAlignment.end,
           children: [
-            Visibility(
-              // visible: true,
-              visible: actionCloseVisibility,
-              child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(12.0)),
-                  child: ElevatedButton(
-                      style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(12.0)))),
-                      onPressed: onPressedCloseBtn,
-                      child: Text(actionCloseLabel))),
-            ),
+            Container(
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(12.0)),
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(12.0)))),
+                    onPressed: onPressedCloseBtn,
+                    child: Text(actionCloseLabel))),
             Visibility(
               visible: actionOkayVisibility,
               child: Container(
